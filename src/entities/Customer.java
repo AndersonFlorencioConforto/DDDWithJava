@@ -12,6 +12,7 @@ public class Customer {
     private Long id;
     private String name;
     private String address;
+    private boolean active;
 
 
     public Customer(Long id, String name, String address) {
@@ -20,27 +21,21 @@ public class Customer {
         this.address = address;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    //pode ser feita uma validação caso o nome passado esteja errado e também substitui o método set
+    void changeName(String name) {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+
+    //substitui o método set para ativar
+    void activate () {
+        this.active = true;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+
+    //substitui o método set para desativar
+    void desactivate() {
+        this.active = false;
     }
 }
