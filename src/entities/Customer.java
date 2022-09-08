@@ -6,6 +6,7 @@ package entities;
 //comportamento
 //regras de negócio ou seja validaçoes etc, isso é o DDD
 //essa classe customer é uma classe anêmica, apenas carrega dados.
+
 public class Customer {
 
     private Long id;
