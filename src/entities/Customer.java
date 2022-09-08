@@ -19,17 +19,32 @@ public class Customer {
         this.id = id;
         this.name = name;
         this.address = address;
+        validate();
+    }
+
+
+    void validate() {
+        if (this.name.length() == 0){
+            throw new RuntimeException("name is required");
+        }
+        if (this.id == null) {
+            throw new RuntimeException("id is required");
+        }
     }
 
 
     //pode ser feita uma validação caso o nome passado esteja errado e também substitui o método set
     void changeName(String name) {
         this.name = name;
+        validate();
     }
 
 
     //substitui o método set para ativar
     void activate () {
+        if (this.address.length() == 0) {
+            throw new RuntimeException("Address é obrigatório para ativar o customer");
+        }
         this.active = true;
     }
 
