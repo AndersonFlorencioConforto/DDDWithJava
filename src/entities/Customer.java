@@ -11,14 +11,13 @@ public class Customer {
 
     private Long id;
     private String name;
-    private String address;
+    private Address address;
     private boolean active;
 
 
-    public Customer(Long id, String name, String address) {
+    public Customer(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.address = address;
         validate();
     }
 
@@ -42,15 +41,18 @@ public class Customer {
 
     //substitui o método set para ativar
     void activate () {
-        if (this.address.length() == 0) {
+        if (this.address == null) {
             throw new RuntimeException("Address é obrigatório para ativar o customer");
         }
         this.active = true;
     }
 
-
     //substitui o método set para desativar
     void desactivate() {
         this.active = false;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
