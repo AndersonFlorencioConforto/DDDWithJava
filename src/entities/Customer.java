@@ -40,7 +40,7 @@ public class Customer {
 
 
     //substitui o método set para ativar
-    void activate () {
+    public void activate () {
         if (this.address == null) {
             throw new RuntimeException("Address é obrigatório para ativar o customer");
         }
